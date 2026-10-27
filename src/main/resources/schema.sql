@@ -21,8 +21,10 @@ CREATE TABLE IF NOT EXISTS labor (
  lote_id BIGINT NOT NULL REFERENCES lote(id), tipo VARCHAR(30) NOT NULL,
  fecha DATE NOT NULL, responsable_id BIGINT NOT NULL REFERENCES usuario(id),
  cantidad DOUBLE PRECISION NOT NULL, observacion VARCHAR(1000) NOT NULL,
- creada_en TIMESTAMP NOT NULL
+ creada_en TIMESTAMP WITH TIME ZONE NOT NULL
 );
+-- Actualiza también una base de la versión 1.0 sin perder registros.
+ALTER TABLE labor ALTER COLUMN creada_en TIMESTAMP WITH TIME ZONE;
 CREATE TABLE IF NOT EXISTS operacion (
  usuario_id BIGINT NOT NULL REFERENCES usuario(id), clave VARCHAR(100) NOT NULL,
  labor_id BIGINT NOT NULL, PRIMARY KEY(usuario_id, clave)

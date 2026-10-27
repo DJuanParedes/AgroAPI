@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository
 import pe.upeu.agrosierra.dominio.*
 import java.sql.Statement
 import java.time.LocalDate
+import java.time.OffsetDateTime
 
 @Repository
 class AgroRepository(private val jdbc: JdbcTemplate) {
@@ -16,7 +17,7 @@ class AgroRepository(private val jdbc: JdbcTemplate) {
     private val laborMapper = RowMapper { rs, _ -> Labor(rs.getLong("id"), rs.getLong("lote_id"),
         TipoLabor.valueOf(rs.getString("tipo")), rs.getDate("fecha").toLocalDate(), rs.getString("responsable"),
         rs.getDouble("cantidad"), rs.getString("observacion"), rs.getLong("responsable_id"),
-        rs.getTimestamp("creada_en").toLocalDateTime()) }
+        rs.getObject("creada_en", OffsetDateTime::class.java).toInstant()) }
     fun lote(id: Long, bloquear: Boolean = false): Lote? = jdbc.query(
         "SELECT * FROM lote WHERE id = ?" + if (bloquear) " FOR UPDATE" else "", loteMapper, id).firstOrNull()
     fun lotes(valle: String?, estado: Boolean?, pagina: Int, tamanio: Int): Pair<List<Lote>, Long> {

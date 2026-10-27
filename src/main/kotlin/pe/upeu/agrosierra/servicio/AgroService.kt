@@ -9,7 +9,8 @@ import pe.upeu.agrosierra.repositorio.AgroRepository
 import pe.upeu.agrosierra.seguridad.Usuario
 import pe.upeu.agrosierra.web.dto.*
 import java.time.LocalDate
-import java.time.LocalDateTime
+import java.time.Instant
+import java.time.temporal.ChronoUnit
 import java.time.format.DateTimeParseException
 
 @Service
@@ -41,7 +42,7 @@ class AgroService(private val repo: AgroRepository) {
         abierto(lote)
         if (req.loteId != actual.loteId) throw FalloApi(HttpStatus.BAD_REQUEST, "No se puede trasladar una labor", mapOf("loteId" to "Debe conservar el lote original"))
         if ("LABOR_EDITAR_TODAS" !in usuario.privilegios &&
-            (actual.responsableId != usuario.id || LocalDateTime.now().isAfter(actual.creadaEn.plusHours(24)))) {
+            (actual.responsableId != usuario.id || Instant.now().isAfter(actual.creadaEn.plus(24, ChronoUnit.HOURS)))) {
             throw FalloApi(HttpStatus.FORBIDDEN, "Solo puede corregir labores propias dentro de las primeras 24 horas")
         }
         val (tipo, fecha) = validar(req, lote)

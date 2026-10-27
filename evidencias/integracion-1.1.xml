@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pe.upeu.agrosierra.AgroApiTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-27T20:07:08" hostname="JUAN_PC" time="3.429">
+  <properties/>
+  <testcase name="RN02 restringe autor y plazo sin comparar roles()" classname="pe.upeu.agrosierra.AgroApiTest" time="2.313"/>
+  <testcase name="privilegios se verifican en el servicio HTTP()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.211"/>
+  <testcase name="cierre con cosecha persiste y bloquea altas y correcciones()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.101"/>
+  <testcase name="reglas RN01 RN03 y RN04 devuelven conflicto o validacion()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.16"/>
+  <testcase name="todas las rutas protegidas rechazan token ausente()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.021"/>
+  <testcase name="fecha de registro se publica como instante UTC inequívoco()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.073"/>
+  <testcase name="recurso ausente y paginacion invalida no producen 500()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.084"/>
+  <testcase name="CRUD persiste e idempotencia evita duplicados()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.165"/>
+  <testcase name="paginacion y filtros respetan el contrato()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.089"/>
+  <testcase name="login valida la contrasena y firma un token de una hora()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.13"/>
+  <testcase name="token alterado y vencido responden 401()" classname="pe.upeu.agrosierra.AgroApiTest" time="0.07"/>
+  <system-out><![CDATA[15:07:03.225 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.upeu.agrosierra.AgroApiTest]: AgroApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:07:03.462 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.upeu.agrosierra.Aplicacion for test class pe.upeu.agrosierra.AgroApiTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+2026-10-27T15:07:04.380-05:00  INFO 10944 --- [    Test worker] pe.upeu.agrosierra.AgroApiTest           : Starting AgroApiTest using Java 21.0.11 with PID 10944 (started by juanp in C:\Users\juanp\Documents\Codex\2026-10-27\referenced-chatgpt-conversation-this-is-an\outputs\AgroAPI)
+2026-10-27T15:07:04.383-05:00  INFO 10944 --- [    Test worker] pe.upeu.agrosierra.AgroApiTest           : No active profile set, falling back to 1 default profile: "default"
+2026-10-27T15:07:06.515-05:00  INFO 10944 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-27T15:07:06.856-05:00  INFO 10944 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:agrotest user=SA
+2026-10-27T15:07:06.860-05:00  INFO 10944 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-27T15:07:08.272-05:00  INFO 10944 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-27T15:07:08.272-05:00  INFO 10944 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-27T15:07:08.274-05:00  INFO 10944 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-27T15:07:08.405-05:00  INFO 10944 --- [    Test worker] pe.upeu.agrosierra.AgroApiTest           : Started AgroApiTest in 4.58 seconds (process running for 6.539)
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\juanp\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.17.8\f09415827a71be7ed621c7bd02550678f28bc81c\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

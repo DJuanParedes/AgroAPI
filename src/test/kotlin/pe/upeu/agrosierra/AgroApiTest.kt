@@ -107,4 +107,12 @@ class AgroApiTest {
         assertEquals(404, mvc.perform(get("/api/v1/lotes/99999").header("Authorization", "Bearer $t")).andReturn().response.status)
         assertEquals(400, mvc.perform(get("/api/v1/lotes?pagina=-1&tamanio=0").header("Authorization", "Bearer $t")).andReturn().response.status)
     }
+    @Test fun `fecha de registro se publica como instante UTC inequívoco`() {
+        val r = mvc.perform(post("/api/v1/labores").header("Authorization", "Bearer ${token()}")
+            .contentType(MediaType.APPLICATION_JSON).content(labor())).andReturn().response
+        assertEquals(201, r.status)
+        val creadaEn = mapper.readTree(r.contentAsString)["creadaEn"].asText()
+        assertTrue(creadaEn.endsWith("Z"))
+        assertTrue(java.time.Duration.between(Instant.parse(creadaEn), Instant.now()).abs().seconds < 5)
+    }
 }
