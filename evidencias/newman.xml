@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="AgroAPI - contrato y seguridad" tests="19" time="0.563">
+  <testsuite name="Login tecnico1" id="3d21b997-400b-433d-9754-af4685e6f23d" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.103">
+    <testcase name="HTTP 200" time="0.103" classname="LoginTecnico1"/>
+  </testsuite>
+  <testsuite name="Login jefe1" id="1c031e85-856a-4ac0-b25a-acc344c44e8a" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.074">
+    <testcase name="HTTP 200" time="0.074" classname="LoginJefe1"/>
+  </testsuite>
+  <testsuite name="Login admin" id="257f1043-cfdd-4211-b879-e046b9f7b5f6" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.072">
+    <testcase name="HTTP 200" time="0.072" classname="LoginAdmin"/>
+  </testsuite>
+  <testsuite name="401 sin token" id="319eb2f5-1fd1-4f70-8328-225b536df39d" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.179">
+    <testcase name="HTTP 401" time="0.179" classname="401SinToken"/>
+  </testsuite>
+  <testsuite name="401 token alterado" id="c706c90e-ad55-48fd-9b22-b7ab9593ba0b" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 401" time="0.005" classname="401TokenAlterado"/>
+  </testsuite>
+  <testsuite name="Perfil actual" id="8e5654e1-13fb-4792-9a36-28cfeed95934" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 200" time="0.006" classname="PerfilActual"/>
+  </testsuite>
+  <testsuite name="Lotes paginados" id="54a6b996-6f12-48d2-a6a8-8304b38ec24d" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 200" time="0.009" classname="LotesPaginados"/>
+  </testsuite>
+  <testsuite name="Lotes por valle y estado" id="48bd5b7b-ac6a-4e8e-b24d-96659a5df86c" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.007">
+    <testcase name="HTTP 200" time="0.007" classname="LotesPorValleYEstado"/>
+  </testsuite>
+  <testsuite name="Detalle" id="bd8969a4-9585-4ae3-afb2-00889895ca98" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.008">
+    <testcase name="HTTP 200" time="0.008" classname="Detalle"/>
+  </testsuite>
+  <testsuite name="Labores paginadas" id="ae10e74a-e238-4593-93ee-227257e3e9d2" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 200" time="0.006" classname="LaboresPaginadas"/>
+  </testsuite>
+  <testsuite name="Crear labor" id="15553dd4-3a6d-4d98-bcda-0cc470ec1038" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="HTTP 201" time="0.011" classname="CrearLabor"/>
+  </testsuite>
+  <testsuite name="Corregir labor" id="b630505c-7b9d-4d77-bec0-40b0de5750e6" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.012">
+    <testcase name="HTTP 200" time="0.012" classname="CorregirLabor"/>
+  </testsuite>
+  <testsuite name="403 administrador no crea" id="c1f84509-1e40-4917-a763-9c92f924efc2" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.023">
+    <testcase name="HTTP 403" time="0.023" classname="403AdministradorNoCrea"/>
+  </testsuite>
+  <testsuite name="403 tecnico no cierra" id="aa1b64e6-b4f9-4ba6-b413-a4ec8289e289" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.007">
+    <testcase name="HTTP 403" time="0.007" classname="403TecnicoNoCierra"/>
+  </testsuite>
+  <testsuite name="400 dosis excesiva" id="d775fcaa-e02a-4f7c-a800-52e15c656367" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 400" time="0.009" classname="400DosisExcesiva"/>
+  </testsuite>
+  <testsuite name="409 campaña cerrada" id="6b00c5a8-311a-49d9-bccb-45dc637e580e" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 409" time="0.009" classname="409CampanaCerrada"/>
+  </testsuite>
+  <testsuite name="409 cierre sin cosecha" id="5870cb6a-105f-4507-8a24-781514c92ee9" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 409" time="0.009" classname="409CierreSinCosecha"/>
+  </testsuite>
+  <testsuite name="404 lote inexistente" id="b15880cb-af09-4fdd-ad50-3f6ebfe5ebbe" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 404" time="0.006" classname="404LoteInexistente"/>
+  </testsuite>
+  <testsuite name="Eliminar 204 sin cuerpo" id="23661cde-7eef-4398-95cd-3cc07767457d" timestamp="2026-10-27T19:33:57.272Z" tests="1" failures="0" errors="0" time="0.008">
+    <testcase name="HTTP 204" time="0.008" classname="Eliminar204SinCuerpo"/>
+  </testsuite>
+</testsuites>
