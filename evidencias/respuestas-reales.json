@@ -1,0 +1,69 @@
+{
+  "fecha": "2026-10-27T19:35:02.157144+00:00",
+  "respuestas": [
+    {
+      "caso": "401 sin token",
+      "metodo": "GET",
+      "ruta": "/lotes",
+      "status": 401,
+      "respuesta": {
+        "timestamp": "2026-10-27T14:35:02.123581600",
+        "status": 401,
+        "error": "Unauthorized",
+        "message": "Debe iniciar sesión",
+        "path": "/api/v1/lotes",
+        "validationErrors": {}
+      }
+    },
+    {
+      "caso": "403 administrador no registra",
+      "metodo": "POST",
+      "ruta": "/labores",
+      "status": 403,
+      "respuesta": {
+        "timestamp": "2026-10-27T14:35:02.130619500",
+        "status": 403,
+        "error": "Forbidden",
+        "message": "No posee el privilegio requerido",
+        "path": "/api/v1/labores",
+        "validationErrors": {}
+      }
+    },
+    {
+      "caso": "400 dosis excesiva",
+      "metodo": "POST",
+      "ruta": "/labores",
+      "status": 400,
+      "respuesta": {
+        "timestamp": "2026-10-27T14:35:02.138600200",
+        "status": 400,
+        "error": "Bad Request",
+        "message": "Datos inválidos",
+        "path": "/api/v1/labores",
+        "validationErrors": {
+          "cantidad": "La dosis máxima para este lote es 12.0"
+        }
+      }
+    },
+    {
+      "caso": "409 sin cosecha",
+      "metodo": "POST",
+      "ruta": "/lotes/2/cerrar-campania",
+      "status": 409,
+      "respuesta": {
+        "timestamp": "2026-10-27T14:35:02.146121300",
+        "status": 409,
+        "error": "Conflict",
+        "message": "Debe registrar al menos una cosecha antes de cerrar la campaña",
+        "path": "/api/v1/lotes/2/cerrar-campania",
+        "validationErrors": {}
+      }
+    }
+  ],
+  "registroOffline": {
+    "coincidencias": 1,
+    "ids": [
+      21
+    ]
+  }
+}
