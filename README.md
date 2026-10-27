@@ -80,3 +80,12 @@ git log --date=short --pretty="%h %ad %s"
 Pruebas: autenticación, firma/expiración, privilegios, paginación, RN-01..04 y CRUD persistido.
 Colección exportable: `docs/AgroAPI.postman_collection.json`.
 Consulte `docs/TRAZABILIDAD.md` para ramas y limitaciones reales del historial.
+
+## Versión 1.1: fechas inequívocas
+
+creadaEn se publica en ISO-8601 UTC (sufijo Z) y se persiste como TIMESTAMP WITH TIME ZONE.
+RN-02 compara instantes: la ventana de 24 horas no depende de la zona del servidor.
+El esquema actualiza la columna existente sin borrar labores. Las fechas antiguas sin zona se convierten
+usando la zona de la sesión de base de datos; para migrar una base trasladada de servidor, debe conservarse
+la zona con la que se registraron originalmente.
+Artefacto ejecutable: AgroAPI-1.1.0.jar. Se conserva la etiqueta original y se publica v1.1-unidad2.
